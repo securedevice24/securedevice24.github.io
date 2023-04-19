@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!-- Created By Amit Tiwari -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/30d5300614.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper" style="margin-bottom: 2px;">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+      <!-- <div class="logo"><a href="#">Website Name</a></div> -->
+      <div class="logo"> <img  src="img/weblogo2.jpeg" alt="Website Logo" style="height: 68px; border-radius: 50%; margin-top: 6px; margin-left: -30px;"> </div>
+
+        <ul class="links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+
+        <div class="containercheck">
+          <style>
+            .containercheck{
+              width: 150px;
+            }
+          </style>
+        </div>
+
+        <ul class="links">
+          <li><a href="#"><i class="fa-solid fa-house"></i> Register</a></li>
+          <li><a href="/login.html"><i class="fa-sharp fa-solid fa-person"></i> Login</a></li>
+        </ul>
+      </div>
+      <!-- <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label> -->
+
+     
+    </nav>
+  </div>
+
+  <section>
+
+    <div class="flex-container">
+      <div class="write">
+        <a href="" class="typewrite" data-period="2000" data-type='[ "SecuremyDevice 24/7" ]'>          
+        </a>
+        <p style="color: white; font-size:20px"> Welcome to our website which increases your device safety×100. <br> No need to take tension, you are our user.</p>
+       </div>
+
+       <div class="iframeclass">
+        <!--<iframe src="img/SECUREMYDEVICE 247.jpg" height="255" width="405" title="Iframe"> <a href="https://myaccount.google.com/find-your-phone"></a></iframe>-->
+         <a href="https://myaccount.google.com/find-your-phone"> <img style="border-style:solid; border-color: white" src="img/SECUREMYDEVICE 247.jpg"> </a>
+       </div>
+
+    </div>
+   
+   
+   
+   
+  </section>
+
+  <section class="fclass">
+  <footer class="footer-distributed">
+
+    <div class="footer-right">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div>
+
+    <div class="footer-left">
+
+      <p class="footer-links">
+        <a class="link-1" href="#">Home</a>
+
+        <a href="#">Privacy</a>
+
+        <a href="#">Terms & Conditions</a>
+      </p>
+
+      <p> Designed and Developed By Amit Tiwari &copy; 2023</p>
+    </div>
+
+  </footer>
+</section>
+
+</body>
+</html>
+<script>
+  var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+</script>
