@@ -80,17 +80,17 @@ html {
   .subtitle {
     font-size: 11px;
   
-    color: rgba(177, 177, 177, 0.3);
+    color:rgba(243, 238, 238, 0.993);
   }
   
   input {
     border: none;
-    border-bottom: solid rgb(143, 143, 143) 1px;
+    border-bottom: solid rgba(243, 238, 238, 0.993) 1px;
   
     margin-bottom: 30px;
   
     background: none;
-    color: rgba(255, 255, 255, 0.555);
+    color:rgba(243, 238, 238, 0.993);
   
     height: 35px;
     width: 300px;
@@ -105,7 +105,7 @@ html {
     box-shadow: 2px 2px 7px #38d39f70;
   
     background: #38d39f;
-    color: rgba(255, 255, 255, 0.8);
+    color:rgba(243, 238, 238, 0.993);
   
     width: 80px;
   
@@ -113,7 +113,7 @@ html {
   }
   
   .submit-btn:hover {
-    color: rgb(255, 255, 255);
+    color:rgba(243, 238, 238, 0.993);
   
     box-shadow: none;
   }
